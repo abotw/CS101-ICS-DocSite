@@ -1,0 +1,2444 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/CE/ch02/">
+      
+      
+        <link rel="prev" href="../ch01/">
+      
+      
+        <link rel="next" href="../ch03/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 2: Computer Hardware - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-computer-hardware" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2: Computer Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-overview-of-computer-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Overview of Computer Hardware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-the-central-processing-unit-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Central Processing Unit (CPU)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-memory-and-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Memory and Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-input-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Input Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-output-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Output Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-storage-media-and-data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Storage Media and Data Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-expansion-and-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Expansion and Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-power-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Power and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/scss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-overview-of-computer-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Overview of Computer Hardware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-the-central-processing-unit-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Central Processing Unit (CPU)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-memory-and-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Memory and Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-input-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Input Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-output-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Output Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-storage-media-and-data-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Storage Media and Data Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-expansion-and-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Expansion and Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-power-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Power and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-2-computer-hardware">Chapter 2: Computer Hardware</h1>
+<hr />
+<h2 id="21-overview-of-computer-hardware">2.1 Overview of Computer Hardware</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hardware</td>
+<td>n.</td>
+<td>硬件</td>
+<td>Hardware refers to the physical parts of a computer.</td>
+<td>Opposite of software.</td>
+</tr>
+<tr>
+<td>component</td>
+<td>n.</td>
+<td>组件，部件</td>
+<td>Each hardware component has a specific function.</td>
+<td>Includes CPU, memory, storage, etc.</td>
+</tr>
+<tr>
+<td>motherboard</td>
+<td>n.</td>
+<td>主板</td>
+<td>All major components are connected to the motherboard.</td>
+<td>Also called <em>mainboard</em>.</td>
+</tr>
+<tr>
+<td>system unit</td>
+<td>n.</td>
+<td>主机箱</td>
+<td>The system unit houses the main hardware components.</td>
+<td>Sometimes called <em>chassis</em>.</td>
+</tr>
+<tr>
+<td>case</td>
+<td>n.</td>
+<td>机箱</td>
+<td>The case protects the internal components.</td>
+<td>Metal or plastic enclosure.</td>
+</tr>
+<tr>
+<td>slot</td>
+<td>n.</td>
+<td>插槽</td>
+<td>Memory modules are inserted into slots on the motherboard.</td>
+<td>Expansion or memory slot.</td>
+</tr>
+<tr>
+<td>port</td>
+<td>n.</td>
+<td>接口，端口</td>
+<td>USB ports are used to connect external devices.</td>
+<td>Types: USB, HDMI, Ethernet.</td>
+</tr>
+<tr>
+<td>cable</td>
+<td>n.</td>
+<td>电缆</td>
+<td>Connect the monitor with an HDMI cable.</td>
+<td>Transmission medium.</td>
+</tr>
+<tr>
+<td>connector</td>
+<td>n.</td>
+<td>连接器</td>
+<td>The cable connector must match the port type.</td>
+<td>Physical plug.</td>
+</tr>
+<tr>
+<td>power supply unit (PSU)</td>
+<td>n.</td>
+<td>电源供应器</td>
+<td>The PSU converts AC to DC for computer components.</td>
+<td>Provides stable voltage.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="22-the-central-processing-unit-cpu">2.2 The Central Processing Unit (CPU)</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU (Central Processing Unit)</td>
+<td>n.</td>
+<td>中央处理器</td>
+<td>The CPU executes program instructions.</td>
+<td>“The brain of the computer.”</td>
+</tr>
+<tr>
+<td>processor</td>
+<td>n.</td>
+<td>处理器</td>
+<td>The processor speed is measured in gigahertz.</td>
+<td>Synonym of CPU.</td>
+</tr>
+<tr>
+<td>core</td>
+<td>n.</td>
+<td>核心</td>
+<td>A multi-core processor can handle several tasks at once.</td>
+<td>e.g., dual-core, quad-core.</td>
+</tr>
+<tr>
+<td>clock speed</td>
+<td>n.</td>
+<td>时钟速度</td>
+<td>Clock speed determines how fast the CPU operates.</td>
+<td>Measured in GHz.</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>n.</td>
+<td>高速缓存</td>
+<td>Cache memory stores frequently used data for quick access.</td>
+<td>Levels: L1, L2, L3.</td>
+</tr>
+<tr>
+<td>register</td>
+<td>n.</td>
+<td>寄存器</td>
+<td>Registers store temporary data inside the CPU.</td>
+<td>Very small, high-speed memory.</td>
+</tr>
+<tr>
+<td>ALU (Arithmetic Logic Unit)</td>
+<td>n.</td>
+<td>算术逻辑单元</td>
+<td>The ALU performs arithmetic and logical operations.</td>
+<td>Core component of CPU.</td>
+</tr>
+<tr>
+<td>control unit</td>
+<td>n.</td>
+<td>控制单元</td>
+<td>The control unit directs the CPU’s activities.</td>
+<td>Coordinates CPU operations.</td>
+</tr>
+<tr>
+<td>instruction set</td>
+<td>n.</td>
+<td>指令集</td>
+<td>Each CPU has its own instruction set architecture.</td>
+<td>e.g., x86, ARM.</td>
+</tr>
+<tr>
+<td>heat sink</td>
+<td>n.</td>
+<td>散热片</td>
+<td>The heat sink helps to cool the processor.</td>
+<td>Prevents overheating.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="23-memory-and-storage">2.3 Memory and Storage</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>memory</td>
+<td>n.</td>
+<td>内存，存储器</td>
+<td>The computer temporarily stores data in memory.</td>
+<td>Usually volatile (RAM).</td>
+</tr>
+<tr>
+<td>RAM (Random Access Memory)</td>
+<td>n.</td>
+<td>随机存取存储器</td>
+<td>RAM is cleared when the power is off.</td>
+<td>Volatile memory.</td>
+</tr>
+<tr>
+<td>ROM (Read Only Memory)</td>
+<td>n.</td>
+<td>只读存储器</td>
+<td>ROM stores permanent system instructions.</td>
+<td>Non-volatile memory.</td>
+</tr>
+<tr>
+<td>main memory</td>
+<td>n.</td>
+<td>主存储器</td>
+<td>Programs are loaded into main memory before execution.</td>
+<td>Refers to RAM + cache.</td>
+</tr>
+<tr>
+<td>secondary storage</td>
+<td>n.</td>
+<td>辅助存储</td>
+<td>Hard drives are secondary storage devices.</td>
+<td>Non-volatile storage.</td>
+</tr>
+<tr>
+<td>hard disk drive (HDD)</td>
+<td>n.</td>
+<td>硬盘驱动器</td>
+<td>HDDs use magnetic disks to store data.</td>
+<td>Older but cheaper storage.</td>
+</tr>
+<tr>
+<td>solid-state drive (SSD)</td>
+<td>n.</td>
+<td>固态硬盘</td>
+<td>SSDs are faster and more reliable than HDDs.</td>
+<td>No moving parts.</td>
+</tr>
+<tr>
+<td>flash memory</td>
+<td>n.</td>
+<td>闪存</td>
+<td>Flash memory is used in USB drives and cameras.</td>
+<td>Non-volatile storage.</td>
+</tr>
+<tr>
+<td>optical disk</td>
+<td>n.</td>
+<td>光盘</td>
+<td>CDs and DVDs are types of optical disks.</td>
+<td>Read using a laser.</td>
+</tr>
+<tr>
+<td>capacity</td>
+<td>n.</td>
+<td>容量</td>
+<td>The storage capacity is measured in gigabytes or terabytes.</td>
+<td>Common units: GB, TB.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="24-input-devices">2.4 Input Devices</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input device</td>
+<td>n.</td>
+<td>输入设备</td>
+<td>A keyboard is a common input device.</td>
+<td>Devices for entering data.</td>
+</tr>
+<tr>
+<td>keyboard</td>
+<td>n.</td>
+<td>键盘</td>
+<td>Users type data with the keyboard.</td>
+<td>Standard layout: QWERTY.</td>
+</tr>
+<tr>
+<td>mouse</td>
+<td>n.</td>
+<td>鼠标</td>
+<td>The mouse controls the cursor on the screen.</td>
+<td>Optical or wireless.</td>
+</tr>
+<tr>
+<td>touchpad</td>
+<td>n.</td>
+<td>触控板</td>
+<td>Laptops have a built-in touchpad for navigation.</td>
+<td>Replaces a mouse.</td>
+</tr>
+<tr>
+<td>scanner</td>
+<td>n.</td>
+<td>扫描仪</td>
+<td>The scanner converts printed text into digital form.</td>
+<td>Optical input device.</td>
+</tr>
+<tr>
+<td>microphone</td>
+<td>n.</td>
+<td>麦克风</td>
+<td>The microphone captures sound for recording.</td>
+<td>Converts sound to digital data.</td>
+</tr>
+<tr>
+<td>webcam</td>
+<td>n.</td>
+<td>网络摄像头</td>
+<td>A webcam records live video.</td>
+<td>Used for online meetings.</td>
+</tr>
+<tr>
+<td>joystick</td>
+<td>n.</td>
+<td>操纵杆</td>
+<td>A joystick is used for controlling games.</td>
+<td>Analog input device.</td>
+</tr>
+<tr>
+<td>touch screen</td>
+<td>n.</td>
+<td>触摸屏</td>
+<td>Tablets use touch screens for input and control.</td>
+<td>Detects touch signals.</td>
+</tr>
+<tr>
+<td>sensor</td>
+<td>n.</td>
+<td>传感器</td>
+<td>Sensors detect physical conditions like light or motion.</td>
+<td>Used in IoT devices.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="25-output-devices">2.5 Output Devices</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output device</td>
+<td>n.</td>
+<td>输出设备</td>
+<td>Monitors and printers are output devices.</td>
+<td>Show or produce results.</td>
+</tr>
+<tr>
+<td>monitor</td>
+<td>n.</td>
+<td>显示器</td>
+<td>The monitor displays text and images.</td>
+<td>Types: LCD, LED.</td>
+</tr>
+<tr>
+<td>display</td>
+<td>n.</td>
+<td>显示屏</td>
+<td>The laptop display has a resolution of 1920×1080.</td>
+<td>General term for screen.</td>
+</tr>
+<tr>
+<td>printer</td>
+<td>n.</td>
+<td>打印机</td>
+<td>The printer produces paper copies of documents.</td>
+<td>Inkjet or laser.</td>
+</tr>
+<tr>
+<td>speaker</td>
+<td>n.</td>
+<td>扬声器</td>
+<td>Speakers output sound from the computer.</td>
+<td>Audio output device.</td>
+</tr>
+<tr>
+<td>projector</td>
+<td>n.</td>
+<td>投影仪</td>
+<td>A projector displays images on a large screen.</td>
+<td>Output for presentations.</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>n.</td>
+<td>分辨率</td>
+<td>High resolution produces clearer images.</td>
+<td>e.g., 4K, 1080p.</td>
+</tr>
+<tr>
+<td>pixel</td>
+<td>n.</td>
+<td>像素</td>
+<td>Each image is made up of millions of pixels.</td>
+<td>Smallest unit on a screen.</td>
+</tr>
+<tr>
+<td>refresh rate</td>
+<td>n.</td>
+<td>刷新率</td>
+<td>The monitor’s refresh rate is 144 Hz.</td>
+<td>Frequency of image updates.</td>
+</tr>
+<tr>
+<td>3D printer</td>
+<td>n.</td>
+<td>三维打印机</td>
+<td>3D printers create objects from digital models.</td>
+<td>Produces physical objects.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="26-storage-media-and-data-access">2.6 Storage Media and Data Access</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>storage device</td>
+<td>n.</td>
+<td>存储设备</td>
+<td>USB drives are portable storage devices.</td>
+<td>Used for saving files.</td>
+</tr>
+<tr>
+<td>USB drive</td>
+<td>n.</td>
+<td>U盘</td>
+<td>A USB drive stores data in flash memory.</td>
+<td>Also called <em>thumb drive</em>.</td>
+</tr>
+<tr>
+<td>memory card</td>
+<td>n.</td>
+<td>存储卡</td>
+<td>Cameras use memory cards to store photos.</td>
+<td>Types: SD, microSD.</td>
+</tr>
+<tr>
+<td>CD-ROM</td>
+<td>n.</td>
+<td>光盘只读存储器</td>
+<td>A CD-ROM can only be read, not written.</td>
+<td>Outdated media.</td>
+</tr>
+<tr>
+<td>DVD</td>
+<td>n.</td>
+<td>数字视频光盘</td>
+<td>A DVD can store about 4.7 GB of data.</td>
+<td>Optical medium.</td>
+</tr>
+<tr>
+<td>Blu-ray disc</td>
+<td>n.</td>
+<td>蓝光光盘</td>
+<td>Blu-ray discs offer higher storage capacity.</td>
+<td>Used for HD video.</td>
+</tr>
+<tr>
+<td>external drive</td>
+<td>n.</td>
+<td>外置硬盘</td>
+<td>External drives are connected via USB.</td>
+<td>Portable backup device.</td>
+</tr>
+<tr>
+<td>access time</td>
+<td>n.</td>
+<td>访问时间</td>
+<td>SSDs have lower access times than HDDs.</td>
+<td>Time to retrieve data.</td>
+</tr>
+<tr>
+<td>data transfer rate</td>
+<td>n.</td>
+<td>数据传输速率</td>
+<td>The USB 3.0 transfer rate is up to 5 Gbps.</td>
+<td>Also called <em>bandwidth</em>.</td>
+</tr>
+<tr>
+<td>format</td>
+<td>v./n.</td>
+<td>格式化；格式</td>
+<td>Please format the disk before use.</td>
+<td>Erases all data.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="27-expansion-and-connectivity">2.7 Expansion and Connectivity</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expansion card</td>
+<td>n.</td>
+<td>扩展卡</td>
+<td>You can add a graphics card to improve performance.</td>
+<td>Plug-in component.</td>
+</tr>
+<tr>
+<td>graphics card</td>
+<td>n.</td>
+<td>显卡</td>
+<td>The graphics card handles image rendering.</td>
+<td>GPU-based.</td>
+</tr>
+<tr>
+<td>sound card</td>
+<td>n.</td>
+<td>声卡</td>
+<td>The sound card processes audio input and output.</td>
+<td>Enhances audio quality.</td>
+</tr>
+<tr>
+<td>network card</td>
+<td>n.</td>
+<td>网卡</td>
+<td>The network card connects the computer to a network.</td>
+<td>Wired or wireless.</td>
+</tr>
+<tr>
+<td>slot</td>
+<td>n.</td>
+<td>插槽</td>
+<td>Expansion cards are inserted into PCI slots.</td>
+<td>On motherboard.</td>
+</tr>
+<tr>
+<td>connector</td>
+<td>n.</td>
+<td>接头，连接器</td>
+<td>Make sure the connector fits the port.</td>
+<td>Physical interface.</td>
+</tr>
+<tr>
+<td>USB (Universal Serial Bus)</td>
+<td>n.</td>
+<td>通用串行总线</td>
+<td>USB ports support many devices.</td>
+<td>Common interface standard.</td>
+</tr>
+<tr>
+<td>HDMI (High-Definition Multimedia Interface)</td>
+<td>n.</td>
+<td>高清多媒体接口</td>
+<td>HDMI cables carry video and audio signals.</td>
+<td>Display connection.</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>n.</td>
+<td>以太网</td>
+<td>Ethernet is the most common wired network technology.</td>
+<td>LAN standard.</td>
+</tr>
+<tr>
+<td>wireless</td>
+<td>adj.</td>
+<td>无线的</td>
+<td>Wireless connections use radio signals.</td>
+<td>e.g., Wi-Fi, Bluetooth.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="28-power-and-maintenance">2.8 Power and Maintenance</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>power supply</td>
+<td>n.</td>
+<td>电源</td>
+<td>The power supply provides electricity to all components.</td>
+<td>Abbr: PSU.</td>
+</tr>
+<tr>
+<td>voltage</td>
+<td>n.</td>
+<td>电压</td>
+<td>The PSU converts AC voltage to DC.</td>
+<td>Measured in volts (V).</td>
+</tr>
+<tr>
+<td>cable management</td>
+<td>n.</td>
+<td>线缆管理</td>
+<td>Proper cable management improves airflow.</td>
+<td>Good maintenance habit.</td>
+</tr>
+<tr>
+<td>fan</td>
+<td>n.</td>
+<td>风扇</td>
+<td>The CPU fan keeps the processor cool.</td>
+<td>Cooling system.</td>
+</tr>
+<tr>
+<td>heat sink</td>
+<td>n.</td>
+<td>散热片</td>
+<td>Heat sinks absorb heat from chips.</td>
+<td>Often made of aluminum.</td>
+</tr>
+<tr>
+<td>maintenance</td>
+<td>n.</td>
+<td>维护</td>
+<td>Regular maintenance prevents hardware failure.</td>
+<td>Includes cleaning and inspection.</td>
+</tr>
+<tr>
+<td>failure</td>
+<td>n.</td>
+<td>故障</td>
+<td>Hardware failure may cause data loss.</td>
+<td>e.g., power failure.</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>v.</td>
+<td>更换</td>
+<td>You should replace the battery if it’s damaged.</td>
+<td>Common maintenance action.</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>v.</td>
+<td>升级</td>
+<td>Users can upgrade RAM to improve performance.</td>
+<td>Also applies to software.</td>
+</tr>
+<tr>
+<td>warranty</td>
+<td>n.</td>
+<td>保修</td>
+<td>The computer comes with a one-year warranty.</td>
+<td>Manufacturer guarantee.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

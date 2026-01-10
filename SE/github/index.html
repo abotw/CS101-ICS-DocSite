@@ -1,0 +1,2721 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/SE/github/">
+      
+      
+        <link rel="prev" href="../cmt-msg/">
+      
+      
+        <link rel="next" href="../../Web/web/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Github - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-github-and-best-practices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Github
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CE/vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 1. What is GitHub?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basic-git-workflow-with-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 2. Basic Git Workflow with GitHub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 2. Basic Git Workflow with GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-a-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Clone a repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-new-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create a new branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-changes-and-stage-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Make changes and stage them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-commit-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Commit your changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-push-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Push to GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-open-a-pull-request-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Open a Pull Request (PR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-merge-and-delete-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Merge and delete branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-understanding-github-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 3. Understanding GitHub Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 3. Understanding GitHub Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-flow-simple-and-popular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔸 GitHub Flow (Simple and Popular)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-flow-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Git Flow (Structured)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trunk-based-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔸 Trunk-Based Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-a-good-commit-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ 4. Writing a Good Commit Message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ 4. Writing a Good Commit Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Good Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-prefixes-conventional-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Common Prefixes (Conventional Commits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-writing-a-good-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 5. Writing a Good .gitignore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 5. Writing a Good .gitignore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-gitignore-for-python-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example .gitignore for Python Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-gitignore-for-nodejs-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example .gitignore for Node.js Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-github-actions-automation-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ 6. GitHub Actions (Automation Workflows)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 6. GitHub Actions (Automation Workflows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-auto-run-tests-on-every-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Auto-run tests on every push
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-managing-issues-and-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧰 7. Managing Issues and Pull Requests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 7. Managing Issues and Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests-prs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests (PRs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-useful-git-commands-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧾 8. Useful Git Commands Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-advanced-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 9. Advanced Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪄 10. Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🪄 10. Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Final Thought
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/scss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 1. What is GitHub?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-basic-git-workflow-with-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 2. Basic Git Workflow with GitHub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 2. Basic Git Workflow with GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-a-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Clone a repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-a-new-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Create a new branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-make-changes-and-stage-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Make changes and stage them
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-commit-your-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Commit your changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-push-to-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Push to GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-open-a-pull-request-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Open a Pull Request (PR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-merge-and-delete-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Merge and delete branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-understanding-github-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 3. Understanding GitHub Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 3. Understanding GitHub Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-flow-simple-and-popular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔸 GitHub Flow (Simple and Popular)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-flow-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Git Flow (Structured)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trunk-based-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔸 Trunk-Based Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-writing-a-good-commit-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ 4. Writing a Good Commit Message
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ 4. Writing a Good Commit Message">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#good-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Good Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-prefixes-conventional-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Common Prefixes (Conventional Commits)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-writing-a-good-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 5. Writing a Good .gitignore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 5. Writing a Good .gitignore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-gitignore-for-python-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example .gitignore for Python Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-gitignore-for-nodejs-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example .gitignore for Node.js Projects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-github-actions-automation-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ 6. GitHub Actions (Automation Workflows)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 6. GitHub Actions (Automation Workflows)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-auto-run-tests-on-every-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Auto-run tests on every push
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-managing-issues-and-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧰 7. Managing Issues and Pull Requests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 7. Managing Issues and Pull Requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull-requests-prs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pull Requests (PRs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-useful-git-commands-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧾 8. Useful Git Commands Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-advanced-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 9. Advanced Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪄 10. Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🪄 10. Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Final Thought
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="introduction-to-github-and-best-practices">🧭 Introduction to GitHub and Best Practices</h1>
+<p>GitHub is one of the most powerful tools for modern software development — it hosts your code, manages collaboration, tracks issues, and automates workflows. Understanding how to use GitHub effectively is essential for maintaining high-quality projects and smooth teamwork.</p>
+<hr />
+<h2 id="1-what-is-github">🚀 1. What is GitHub?</h2>
+<p><strong>GitHub</strong> is a cloud-based platform for hosting Git repositories.<br />
+It builds on <strong>Git</strong>, a distributed version control system, adding features such as:</p>
+<ul>
+<li>
+<p><strong>Remote repositories</strong> for sharing and syncing code</p>
+</li>
+<li>
+<p><strong>Pull requests</strong> for proposing and reviewing changes</p>
+</li>
+<li>
+<p><strong>Issues</strong> and <strong>Discussions</strong> for project management</p>
+</li>
+<li>
+<p><strong>Actions</strong> for automation and CI/CD</p>
+</li>
+<li>
+<p><strong>Project boards</strong> for organizing work visually</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>In short:</strong> Git manages your code. GitHub manages your collaboration.</p>
+</blockquote>
+<hr />
+<h2 id="2-basic-git-workflow-with-github">🧩 2. Basic Git Workflow with GitHub</h2>
+<p>A typical workflow for Git and GitHub looks like this:</p>
+<h3 id="step-1-clone-a-repository">Step 1: Clone a repository</h3>
+<pre><code class="language-bash">git clone https://github.com/username/repository.git
+cd repository
+</code></pre>
+<h3 id="step-2-create-a-new-branch">Step 2: Create a new branch</h3>
+<pre><code class="language-bash">git checkout -b feature/my-new-feature
+</code></pre>
+<h3 id="step-3-make-changes-and-stage-them">Step 3: Make changes and stage them</h3>
+<pre><code class="language-bash">git add .
+</code></pre>
+<h3 id="step-4-commit-your-changes">Step 4: Commit your changes</h3>
+<pre><code class="language-bash">git commit -m &quot;Add login form validation&quot;
+</code></pre>
+<h3 id="step-5-push-to-github">Step 5: Push to GitHub</h3>
+<pre><code class="language-bash">git push origin feature/my-new-feature
+</code></pre>
+<h3 id="step-6-open-a-pull-request-pr">Step 6: Open a Pull Request (PR)</h3>
+<p>On GitHub:</p>
+<ul>
+<li>
+<p>Go to the repository</p>
+</li>
+<li>
+<p>Click <strong>“Compare &amp; pull request”</strong></p>
+</li>
+<li>
+<p>Describe your changes</p>
+</li>
+<li>
+<p>Request a review</p>
+</li>
+</ul>
+<h3 id="step-7-merge-and-delete-branch">Step 7: Merge and delete branch</h3>
+<p>Once approved, merge your branch into the main branch and delete it.</p>
+<hr />
+<h2 id="3-understanding-github-workflows">🧠 3. Understanding GitHub Workflows</h2>
+<p>GitHub workflows describe how teams collaborate on code. Here are some common strategies:</p>
+<h3 id="github-flow-simple-and-popular">🔸 GitHub Flow (Simple and Popular)</h3>
+<p>Best for continuous deployment projects.</p>
+<ol>
+<li>
+<p>Create a branch</p>
+</li>
+<li>
+<p>Commit changes</p>
+</li>
+<li>
+<p>Open a pull request</p>
+</li>
+<li>
+<p>Review and merge into <code>main</code></p>
+</li>
+<li>
+<p>Deploy automatically</p>
+</li>
+</ol>
+<h3 id="git-flow-structured">🔹 Git Flow (Structured)</h3>
+<p>Ideal for larger projects or release cycles.</p>
+<ul>
+<li>
+<p><code>main</code> — production-ready code</p>
+</li>
+<li>
+<p><code>develop</code> — integration branch for features</p>
+</li>
+<li>
+<p><code>feature/*</code> — new features</p>
+</li>
+<li>
+<p><code>release/*</code> — preparing a release</p>
+</li>
+<li>
+<p><code>hotfix/*</code> — urgent production fixes</p>
+</li>
+</ul>
+<blockquote>
+<p>Git Flow adds structure but can feel heavy for smaller teams.</p>
+</blockquote>
+<h3 id="trunk-based-development">🔸 Trunk-Based Development</h3>
+<p>All developers work on <strong>short-lived branches</strong> and merge quickly into <code>main</code>.<br />
+Used by high-performance teams (e.g., Google, Facebook).</p>
+<hr />
+<h2 id="4-writing-a-good-commit-message">✍️ 4. Writing a Good Commit Message</h2>
+<p>A <strong>commit message</strong> should clearly describe <em>what</em> and <em>why</em> you changed something.</p>
+<h3 id="good-practices">✅ Good Practices</h3>
+<ul>
+<li>
+<p>Use the <strong>imperative mood</strong> (“Fix bug” not “Fixed bug”)</p>
+</li>
+<li>
+<p>Limit the subject line to <strong>50 characters</strong></p>
+</li>
+<li>
+<p>Use a blank line between subject and body</p>
+</li>
+<li>
+<p>Wrap body text at <strong>72 characters</strong></p>
+</li>
+<li>
+<p>Reference related issues if applicable (<code>#42</code>)</p>
+</li>
+</ul>
+<h3 id="example">📘 Example</h3>
+<pre><code>feat(login): add client-side password validation
+
+This commit introduces basic password validation on the client side.
+It prevents users from submitting empty or too-short passwords.
+</code></pre>
+<h3 id="common-prefixes-conventional-commits">💬 Common Prefixes (Conventional Commits)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feat</td>
+<td>a new feature</td>
+</tr>
+<tr>
+<td>fix</td>
+<td>a bug fix</td>
+</tr>
+<tr>
+<td>docs</td>
+<td>documentation only</td>
+</tr>
+<tr>
+<td>style</td>
+<td>code style (formatting, whitespace, etc.)</td>
+</tr>
+<tr>
+<td>refactor</td>
+<td>refactoring without changing behavior</td>
+</tr>
+<tr>
+<td>test</td>
+<td>adding or updating tests</td>
+</tr>
+<tr>
+<td>chore</td>
+<td>maintenance, dependency updates</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧩 Example: <code>chore(deps): update lodash to 4.17.21</code></p>
+</blockquote>
+<hr />
+<h2 id="5-writing-a-good-gitignore">🧱 5. Writing a Good <code>.gitignore</code></h2>
+<p>A <code>.gitignore</code> file tells Git which files or folders to <strong>ignore</strong> — preventing unnecessary or sensitive files from being tracked.</p>
+<h3 id="example-gitignore-for-python-projects">Example <code>.gitignore</code> for Python Projects</h3>
+<pre><code># Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# OS files
+.DS_Store
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+tmp/
+</code></pre>
+<h3 id="example-gitignore-for-nodejs-projects">Example <code>.gitignore</code> for Node.js Projects</h3>
+<pre><code>node_modules/
+dist/
+.env
+npm-debug.log*
+</code></pre>
+<h3 id="general-tips">General Tips</h3>
+<ul>
+<li>
+<p>Always include <strong>build artifacts</strong>, <strong>logs</strong>, and <strong>dependencies</strong>.</p>
+</li>
+<li>
+<p>Do <strong>not ignore</strong> essential config files like <code>package.json</code> or <code>requirements.txt</code>.</p>
+</li>
+<li>
+<p>You can generate templates via <a href="https://www.toptal.com/developers/gitignore">gitignore.io</a>.</p>
+</li>
+</ul>
+<hr />
+<h2 id="6-github-actions-automation-workflows">⚙️ 6. GitHub Actions (Automation Workflows)</h2>
+<p><strong>GitHub Actions</strong> allow you to automate tasks such as testing, building, and deployment.</p>
+<h3 id="example-auto-run-tests-on-every-push">Example: Auto-run tests on every push</h3>
+<p>Create a workflow in <code>.github/workflows/test.yml</code>:</p>
+<pre><code class="language-yaml">name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest
+</code></pre>
+<blockquote>
+<p>📦 You can explore reusable workflows and actions at <a href="https://github.com/marketplace/actions">github.com/marketplace/actions</a></p>
+</blockquote>
+<hr />
+<h2 id="7-managing-issues-and-pull-requests">🧰 7. Managing Issues and Pull Requests</h2>
+<p>GitHub isn’t just for code — it’s for <strong>collaboration</strong>.</p>
+<h3 id="issues">Issues</h3>
+<ul>
+<li>
+<p>Use issues to report bugs or propose features.</p>
+</li>
+<li>
+<p>Add labels like <code>bug</code>, <code>enhancement</code>, or <code>help wanted</code>.</p>
+</li>
+<li>
+<p>Reference commits or PRs using <code>#number</code>.</p>
+</li>
+</ul>
+<h3 id="pull-requests-prs">Pull Requests (PRs)</h3>
+<ul>
+<li>
+<p>Use PRs to propose code changes.</p>
+</li>
+<li>
+<p>Include <strong>a clear description</strong>, <strong>screenshots</strong>, or <strong>test results</strong>.</p>
+</li>
+<li>
+<p>Request reviews from teammates.</p>
+</li>
+<li>
+<p>Resolve conflicts before merging.</p>
+</li>
+</ul>
+<hr />
+<h2 id="8-useful-git-commands-reference">🧾 8. Useful Git Commands Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>Check current status</td>
+</tr>
+<tr>
+<td><code>git diff</code></td>
+<td>Show file differences</td>
+</tr>
+<tr>
+<td><code>git log</code></td>
+<td>Show commit history</td>
+</tr>
+<tr>
+<td><code>git branch</code></td>
+<td>List or create branches</td>
+</tr>
+<tr>
+<td><code>git merge</code></td>
+<td>Merge branches</td>
+</tr>
+<tr>
+<td><code>git stash</code></td>
+<td>Temporarily save uncommitted changes</td>
+</tr>
+<tr>
+<td><code>git rebase</code></td>
+<td>Reapply commits on top of another base</td>
+</tr>
+<tr>
+<td><code>git reset --hard HEAD~1</code></td>
+<td>Undo last commit</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-advanced-tips">🧠 9. Advanced Tips</h2>
+<ul>
+<li>
+<p>Use <strong>SSH keys</strong> for secure authentication (<code>ssh-keygen -t ed25519</code>)</p>
+</li>
+<li>
+<p>Set up <strong>branch protection rules</strong> to prevent accidental merges</p>
+</li>
+<li>
+<p>Use <strong>semantic versioning</strong> (<code>v1.2.3</code>) for releases</p>
+</li>
+<li>
+<p>Always <strong>rebase before pushing</strong> to keep history clean</p>
+</li>
+<li>
+<p>Enable <strong>required checks</strong> in repository settings to enforce CI pipelines</p>
+</li>
+</ul>
+<hr />
+<h2 id="10-summary">🪄 10. Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>Host and collaborate on code</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>Defines how code moves from development to production</td>
+</tr>
+<tr>
+<td><strong>Commit messages</strong></td>
+<td>Document changes and their purpose</td>
+</tr>
+<tr>
+<td><strong>.gitignore</strong></td>
+<td>Prevents unnecessary files from being tracked</td>
+</tr>
+<tr>
+<td><strong>Actions</strong></td>
+<td>Automate build, test, and deploy tasks</td>
+</tr>
+<tr>
+<td><strong>Pull Requests</strong></td>
+<td>Central for collaboration and code review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="final-thought">📘 Final Thought</h3>
+<blockquote>
+<p>“A well-managed GitHub repository tells a story — not just of your code, but of your discipline.”</p>
+</blockquote>
+<p>Clean commits, clear workflows, and thoughtful automation can transform your project from a code dump into a maintainable, professional system.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

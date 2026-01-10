@@ -1,0 +1,2434 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Matt Li">
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/Web/CSS/scss/">
+      
+      
+        <link rel="prev" href="../../web/">
+      
+      
+        <link rel="next" href="../../SiteGen/site-gen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Introduction to SCSS (Sassy CSS) - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-scss-sassy-css" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to SCSS (Sassy CSS)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CE/vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SE/cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SE/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is SCSS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scss-vs-sass-vs-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SCSS vs Sass vs CSS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-use-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Why Use SCSS?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Why Use SCSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scss-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SCSS Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Nesting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mixins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-functions-and-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Functions and Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-partials-and-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Partials and Imports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-inheritance-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Inheritance (@extend)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-control-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Control Directives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Compilation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-example-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Example Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-integration-with-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Integration with Jekyll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-scss-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. SCSS Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-example-complete-scss-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Example: Complete SCSS Snippet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is SCSS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-scss-vs-sass-vs-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SCSS vs Sass vs CSS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-use-scss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Why Use SCSS?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Why Use SCSS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scss-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SCSS Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-nesting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Nesting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mixins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-functions-and-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Functions and Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-partials-and-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Partials and Imports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-inheritance-extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Inheritance (@extend)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-control-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Control Directives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Compilation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-example-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Example Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-integration-with-jekyll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Integration with Jekyll
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-scss-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. SCSS Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-example-complete-scss-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Example: Complete SCSS Snippet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="introduction-to-scss-sassy-css">Introduction to SCSS (Sassy CSS)</h1>
+<p><strong>SCSS</strong> — short for <strong>Sassy CSS</strong> — is a <strong>CSS preprocessor syntax</strong> that extends the capabilities of regular CSS.<br />
+It allows developers to write <strong>cleaner, more maintainable, and more powerful stylesheets</strong> by introducing programming-like features such as <strong>variables, nesting, mixins, functions,</strong> and <strong>imports</strong>.</p>
+<p>SCSS is part of the <strong>Sass (Syntactically Awesome Style Sheets)</strong> family — a project created by Hampton Catlin and developed by Natalie Weizenbaum.<br />
+Today, it’s a standard tool in modern front-end development workflows, widely supported across frameworks like <strong>React</strong>, <strong>Vue</strong>, and <strong>Jekyll</strong>.</p>
+<hr />
+<h2 id="1-what-is-scss">1. What Is SCSS?</h2>
+<p><strong>SCSS</strong> is a superset of <strong>CSS3</strong>, meaning every valid CSS file is also a valid SCSS file.<br />
+It compiles down to standard CSS through a <strong>Sass compiler</strong>, allowing browsers to read it normally.</p>
+<pre><code class="language-scss">// Example SCSS
+$primary-color: #3498db;
+
+body {
+  background: $primary-color;
+  color: white;
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+````
+
+When compiled, it becomes:
+
+```css
+body {
+  background: #3498db;
+  color: white;
+}
+body h1 {
+  font-size: 2rem;
+}
+</code></pre>
+<hr />
+<h2 id="2-scss-vs-sass-vs-css">2. SCSS vs Sass vs CSS</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><strong>CSS</strong></th>
+<th><strong>Sass (.sass)</strong></th>
+<th><strong>SCSS (.scss)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>Braces <code>{}</code> and semicolons <code>;</code></td>
+<td>Indentation-based (no braces)</td>
+<td>CSS-like (braces + semicolons)</td>
+</tr>
+<tr>
+<td>Learning Curve</td>
+<td>Easy</td>
+<td>Moderate</td>
+<td>Easy</td>
+</tr>
+<tr>
+<td>Compatibility</td>
+<td>Native to browsers</td>
+<td>Requires compiler</td>
+<td>Requires compiler</td>
+</tr>
+<tr>
+<td>Example</td>
+<td><code>color: red;</code></td>
+<td><code>color: red</code></td>
+<td><code>color: red;</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 In practice, <strong>SCSS</strong> is preferred because it feels familiar to CSS developers while offering advanced features.</p>
+</blockquote>
+<hr />
+<h2 id="3-why-use-scss">3. Why Use SCSS?</h2>
+<p>SCSS helps you <strong>manage large, complex stylesheets</strong> efficiently.<br />
+It improves <strong>readability, reusability, and consistency</strong>.</p>
+<h3 id="key-benefits">Key Benefits</h3>
+<ul>
+<li>
+<p><strong>Variables</strong> for consistent color and font usage</p>
+</li>
+<li>
+<p><strong>Nesting</strong> to mirror the structure of HTML</p>
+</li>
+<li>
+<p><strong>Mixins</strong> to reuse blocks of styles</p>
+</li>
+<li>
+<p><strong>Functions</strong> for calculations and logic</p>
+</li>
+<li>
+<p><strong>Imports &amp; Partials</strong> for modular organization</p>
+</li>
+<li>
+<p><strong>Inheritance</strong> for shared properties among selectors</p>
+</li>
+</ul>
+<hr />
+<h2 id="4-scss-variables">4. SCSS Variables</h2>
+<p>Variables in SCSS start with a <code>$</code> symbol and store reusable values.</p>
+<pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #2ecc71;
+
+body {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+<p>You can easily change the entire site’s color scheme by editing just one variable.</p>
+<hr />
+<h2 id="5-nesting">5. Nesting</h2>
+<p>SCSS allows <strong>nested selectors</strong>, reflecting the structure of HTML and avoiding repetitive code.</p>
+<pre><code class="language-scss">nav {
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+</code></pre>
+<p>Compiles to:</p>
+<pre><code class="language-css">nav ul {
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+}
+</code></pre>
+<blockquote>
+<p>⚠️ Avoid nesting more than 3 levels deep to prevent overly specific selectors.</p>
+</blockquote>
+<hr />
+<h2 id="6-mixins">6. Mixins</h2>
+<p><strong>Mixins</strong> allow you to define reusable chunks of CSS code.<br />
+You can also pass arguments, similar to functions.</p>
+<pre><code class="language-scss">@mixin button($color) {
+  background-color: $color;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 15px;
+}
+
+button {
+  @include button(#e74c3c);
+}
+</code></pre>
+<p>This helps you maintain a consistent design system.</p>
+<hr />
+<h2 id="7-functions-and-operators">7. Functions and Operators</h2>
+<p>SCSS provides <strong>functions</strong> for dynamic calculations.</p>
+<pre><code class="language-scss">$base: 16px;
+
+p {
+  font-size: $base * 1.25;
+}
+</code></pre>
+<p>You can also use <strong>built-in functions</strong>, like <code>lighten()</code>, <code>darken()</code>, <code>mix()</code>, etc.:</p>
+<pre><code class="language-scss">$color: #3498db;
+
+button {
+  background: lighten($color, 10%);
+  border: 1px solid darken($color, 10%);
+}
+</code></pre>
+<hr />
+<h2 id="8-partials-and-imports">8. Partials and Imports</h2>
+<p>You can split styles into multiple files for better organization.<br />
+Partial files start with an underscore (<code>_</code>), and they won’t compile directly.</p>
+<p>Example structure:</p>
+<pre><code>scss/
+  _variables.scss
+  _header.scss
+  _footer.scss
+  main.scss
+</code></pre>
+<p>Inside <code>main.scss</code>:</p>
+<pre><code class="language-scss">@use 'variables';
+@use 'header';
+@use 'footer';
+</code></pre>
+<p>The compiler combines them into one final CSS file.</p>
+<blockquote>
+<p>🔁 In older SCSS syntax, <code>@import</code> was used, but modern Sass recommends <code>@use</code> for better performance and namespace management.</p>
+</blockquote>
+<hr />
+<h2 id="9-inheritance-extend">9. Inheritance (<code>@extend</code>)</h2>
+<p>The <code>@extend</code> directive allows one selector to inherit styles from another.</p>
+<pre><code class="language-scss">.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.success {
+  @extend .message;
+  background: #2ecc71;
+}
+
+.error {
+  @extend .message;
+  background: #e74c3c;
+}
+</code></pre>
+<p>This reduces duplication and improves maintainability.</p>
+<hr />
+<h2 id="10-control-directives">10. Control Directives</h2>
+<p>SCSS supports logic with <strong><code>@if</code></strong>, <strong><code>@for</code></strong>, <strong><code>@each</code></strong>, and <strong><code>@while</code></strong> directives.</p>
+<pre><code class="language-scss">$theme: dark;
+
+body {
+  @if $theme == dark {
+    background: #222;
+    color: white;
+  } @else {
+    background: white;
+    color: black;
+  }
+}
+</code></pre>
+<p>Loops example:</p>
+<pre><code class="language-scss">@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 100px * $i;
+  }
+}
+</code></pre>
+<p>Compiles to:</p>
+<pre><code class="language-css">.item-1 { width: 100px; }
+.item-2 { width: 200px; }
+.item-3 { width: 300px; }
+</code></pre>
+<hr />
+<h2 id="11-compilation">11. Compilation</h2>
+<p>SCSS needs to be <strong>compiled</strong> into CSS before browsers can read it.<br />
+There are several ways to compile:</p>
+<h3 id="command-line">Command Line</h3>
+<pre><code class="language-bash">npm install -g sass
+sass input.scss output.css
+</code></pre>
+<h3 id="watch-mode">Watch Mode</h3>
+<pre><code class="language-bash">sass --watch scss:css
+</code></pre>
+<h3 id="integration">Integration</h3>
+<ul>
+<li>
+<p><strong>Webpack / Vite</strong>: via <code>sass-loader</code></p>
+</li>
+<li>
+<p><strong>Jekyll</strong>: automatic SCSS processing under <code>_sass/</code></p>
+</li>
+<li>
+<p><strong>VS Code extensions</strong>: live compilation and preview</p>
+</li>
+</ul>
+<hr />
+<h2 id="12-example-project-structure">12. Example Project Structure</h2>
+<pre><code>project/
+├── scss/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   ├── _header.scss
+│   └── main.scss
+├── css/
+│   └── main.css
+├── index.html
+└── package.json
+</code></pre>
+<p>You can configure a build script in <code>package.json</code>:</p>
+<pre><code class="language-json">&quot;scripts&quot;: {
+  &quot;build-css&quot;: &quot;sass scss/main.scss css/main.css --style=compressed&quot;,
+  &quot;watch-css&quot;: &quot;sass --watch scss:css&quot;
+}
+</code></pre>
+<p>Then run:</p>
+<pre><code class="language-bash">npm run watch-css
+</code></pre>
+<hr />
+<h2 id="13-integration-with-jekyll">13. Integration with Jekyll</h2>
+<p>If you’re building a <strong>Jekyll site</strong>, SCSS works seamlessly:</p>
+<ul>
+<li>
+<p>Put <code>.scss</code> files in the <code>_sass/</code> directory.</p>
+</li>
+<li>
+<p>Reference them in your main stylesheet:</p>
+</li>
+</ul>
+<pre><code class="language-scss">@import &quot;variables&quot;;
+@import &quot;layout&quot;;
+</code></pre>
+<ul>
+<li>Add this to your site’s front matter:</li>
+</ul>
+<pre><code class="language-scss">---
+---
+@import &quot;main&quot;;
+</code></pre>
+<p>Jekyll will automatically compile your SCSS into CSS when you build the site.</p>
+<hr />
+<h2 id="14-scss-best-practices">14. SCSS Best Practices</h2>
+<p>✅ <strong>Use variables</strong> for consistent colors and spacing<br />
+✅ <strong>Limit nesting</strong> to 3 levels<br />
+✅ <strong>Organize with partials</strong> and modular files<br />
+✅ <strong>Use <code>@use</code> instead of <code>@import</code></strong><br />
+✅ <strong>Keep mixins reusable</strong> and not too large<br />
+✅ <strong>Leverage functions</strong> for dynamic calculations</p>
+<hr />
+<h2 id="15-example-complete-scss-snippet">15. Example: Complete SCSS Snippet</h2>
+<pre><code class="language-scss">// _variables.scss
+$primary: #007bff;
+$radius: 5px;
+
+// _button.scss
+@mixin button($bg) {
+  background: $bg;
+  color: white;
+  border-radius: $radius;
+  padding: 10px 15px;
+  border: none;
+}
+
+// main.scss
+@use 'variables';
+@use 'button';
+
+.btn {
+  @include button($primary);
+  &amp;:hover {
+    background: lighten($primary, 10%);
+  }
+}
+</code></pre>
+<p>Compiled CSS:</p>
+<pre><code class="language-css">.btn {
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: none;
+}
+.btn:hover {
+  background: #339dff;
+}
+</code></pre>
+<hr />
+<h2 id="16-conclusion">16. Conclusion</h2>
+<p><strong>SCSS</strong> revolutionizes how developers write and maintain CSS.<br />
+By bringing programming concepts into styling, it makes code more modular, powerful, and maintainable — especially for large projects.</p>
+<p>For students in <strong>CS101-ICS</strong> or anyone learning modern front-end development, mastering SCSS provides a deeper understanding of <strong>modular design</strong>, <strong>style reusability</strong>, and <strong>build automation</strong> — essential concepts in professional web engineering.</p>
+<hr />
+<p><em>Further Reading:</em></p>
+<ul>
+<li>
+<p><a href="https://sass-lang.com/documentation">Official Sass Documentation</a></p>
+</li>
+<li>
+<p><a href="https://sass-guidelin.es/">Sass Guidelines</a></p>
+</li>
+<li>
+<p><a href="https://jekyllrb.com/docs/assets/#sassscss">Using Sass with Jekyll</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN CSS Reference</a></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

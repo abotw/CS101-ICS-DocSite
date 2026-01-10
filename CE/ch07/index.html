@@ -1,0 +1,2551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/CE/ch07/">
+      
+      
+        <link rel="prev" href="../ch06/">
+      
+      
+        <link rel="next" href="../ch08/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 7: Programming and Languages - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-7-programming-and-languages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 7: Programming and Languages
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-introduction-to-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Introduction to Programming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-types-of-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Types of Programming Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-structure-of-a-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Structure of a Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-compilation-and-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Compilation and Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-control-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Control Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-data-handling-and-inputoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Data Handling and Input/Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-object-oriented-programming-oop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Object-Oriented Programming (OOP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-common-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Common Programming Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-software-development-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 Software Development Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/scss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-introduction-to-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Introduction to Programming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-types-of-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Types of Programming Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-structure-of-a-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Structure of a Program
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-compilation-and-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Compilation and Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-control-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Control Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-data-handling-and-inputoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Data Handling and Input/Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-object-oriented-programming-oop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Object-Oriented Programming (OOP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-common-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Common Programming Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-software-development-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 Software Development Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-7-programming-and-languages">Chapter 7: Programming and Languages</h1>
+<hr />
+<h2 id="71-introduction-to-programming">7.1 Introduction to Programming</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>programming</td>
+<td>n.</td>
+<td>程序设计</td>
+<td>Programming is the process of writing instructions for a computer.</td>
+<td>Core concept of software creation.</td>
+</tr>
+<tr>
+<td>programmer</td>
+<td>n.</td>
+<td>程序员</td>
+<td>A programmer writes and tests computer code.</td>
+<td>Also called <em>developer</em>.</td>
+</tr>
+<tr>
+<td>coding</td>
+<td>n.</td>
+<td>编码</td>
+<td>Coding involves translating logic into programming language syntax.</td>
+<td>Informal term for programming.</td>
+</tr>
+<tr>
+<td>source code</td>
+<td>n.</td>
+<td>源代码</td>
+<td>Source code is written in human-readable form.</td>
+<td>Text before compilation.</td>
+</tr>
+<tr>
+<td>algorithm</td>
+<td>n.</td>
+<td>算法</td>
+<td>An algorithm is a step-by-step procedure to solve a problem.</td>
+<td>Foundation of programming logic.</td>
+</tr>
+<tr>
+<td>logic</td>
+<td>n.</td>
+<td>逻辑</td>
+<td>Logical thinking is essential for programming.</td>
+<td>Related to flow control.</td>
+</tr>
+<tr>
+<td>syntax</td>
+<td>n.</td>
+<td>语法</td>
+<td>Each programming language has its own syntax.</td>
+<td>Rules for writing valid code.</td>
+</tr>
+<tr>
+<td>semantics</td>
+<td>n.</td>
+<td>语义</td>
+<td>Syntax defines form; semantics defines meaning.</td>
+<td>The “logic” behind syntax.</td>
+</tr>
+<tr>
+<td>debugging</td>
+<td>n.</td>
+<td>调试</td>
+<td>Debugging is the process of finding and fixing code errors.</td>
+<td>From “bug” (error).</td>
+</tr>
+<tr>
+<td>execution</td>
+<td>n.</td>
+<td>执行</td>
+<td>Program execution begins with the main function.</td>
+<td>Running a program.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="72-types-of-programming-languages">7.2 Types of Programming Languages</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>machine language</td>
+<td>n.</td>
+<td>机器语言</td>
+<td>Machine language is directly understood by the CPU.</td>
+<td>Binary code of 0s and 1s.</td>
+</tr>
+<tr>
+<td>assembly language</td>
+<td>n.</td>
+<td>汇编语言</td>
+<td>Assembly language uses mnemonic codes for instructions.</td>
+<td>Low-level programming.</td>
+</tr>
+<tr>
+<td>high-level language</td>
+<td>n.</td>
+<td>高级语言</td>
+<td>Python and Java are high-level languages.</td>
+<td>Human-readable syntax.</td>
+</tr>
+<tr>
+<td>low-level language</td>
+<td>n.</td>
+<td>低级语言</td>
+<td>Low-level languages provide direct hardware control.</td>
+<td>Includes assembly and machine code.</td>
+</tr>
+<tr>
+<td>procedural language</td>
+<td>n.</td>
+<td>过程式语言</td>
+<td>C is a procedural programming language.</td>
+<td>Uses functions and procedures.</td>
+</tr>
+<tr>
+<td>object-oriented language</td>
+<td>n.</td>
+<td>面向对象语言</td>
+<td>Java and C++ support object-oriented programming.</td>
+<td>Based on classes and objects.</td>
+</tr>
+<tr>
+<td>functional language</td>
+<td>n.</td>
+<td>函数式语言</td>
+<td>Lisp and Haskell are functional languages.</td>
+<td>Emphasize pure functions.</td>
+</tr>
+<tr>
+<td>scripting language</td>
+<td>n.</td>
+<td>脚本语言</td>
+<td>JavaScript and Python are common scripting languages.</td>
+<td>Interpreted languages.</td>
+</tr>
+<tr>
+<td>markup language</td>
+<td>n.</td>
+<td>标记语言</td>
+<td>HTML is a markup language used for web pages.</td>
+<td>Describes structure, not logic.</td>
+</tr>
+<tr>
+<td>domain-specific language</td>
+<td>n.</td>
+<td>领域特定语言</td>
+<td>SQL is a domain-specific language for databases.</td>
+<td>Specialized purpose.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="73-structure-of-a-program">7.3 Structure of a Program</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>statement</td>
+<td>n.</td>
+<td>语句</td>
+<td>Each statement tells the computer to perform an action.</td>
+<td>Basic unit of execution.</td>
+</tr>
+<tr>
+<td>expression</td>
+<td>n.</td>
+<td>表达式</td>
+<td>An expression produces a value when evaluated.</td>
+<td>e.g., <code>a + b</code>.</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>n.</td>
+<td>变量</td>
+<td>A variable stores data in memory.</td>
+<td>Has a name and type.</td>
+</tr>
+<tr>
+<td>constant</td>
+<td>n.</td>
+<td>常量</td>
+<td>Constants hold fixed values that do not change.</td>
+<td>Declared once.</td>
+</tr>
+<tr>
+<td>data type</td>
+<td>n.</td>
+<td>数据类型</td>
+<td>Common data types include int, float, and string.</td>
+<td>Defines value format.</td>
+</tr>
+<tr>
+<td>function</td>
+<td>n.</td>
+<td>函数</td>
+<td>A function performs a specific task in a program.</td>
+<td>May return a value.</td>
+</tr>
+<tr>
+<td>parameter</td>
+<td>n.</td>
+<td>参数</td>
+<td>Parameters pass data into a function.</td>
+<td>Defined in function declaration.</td>
+</tr>
+<tr>
+<td>return value</td>
+<td>n.</td>
+<td>返回值</td>
+<td>A function may return a value to the caller.</td>
+<td>Output of a function.</td>
+</tr>
+<tr>
+<td>block</td>
+<td>n.</td>
+<td>代码块</td>
+<td>A block groups multiple statements.</td>
+<td>Defined by braces <code>{}</code> or indentation.</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>n.</td>
+<td>注释</td>
+<td>Comments explain code for human readers.</td>
+<td>Ignored by the compiler.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="74-compilation-and-interpretation">7.4 Compilation and Interpretation</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compiler</td>
+<td>n.</td>
+<td>编译器</td>
+<td>The compiler translates source code into machine code.</td>
+<td>e.g., GCC, Clang.</td>
+</tr>
+<tr>
+<td>compile</td>
+<td>v.</td>
+<td>编译</td>
+<td>The program must be compiled before execution.</td>
+<td>Prepares for running.</td>
+</tr>
+<tr>
+<td>interpreter</td>
+<td>n.</td>
+<td>解释器</td>
+<td>The Python interpreter runs code line by line.</td>
+<td>Executes directly.</td>
+</tr>
+<tr>
+<td>interpret</td>
+<td>v.</td>
+<td>解释执行</td>
+<td>Interpreted languages are slower but flexible.</td>
+<td>Runtime execution.</td>
+</tr>
+<tr>
+<td>assembly</td>
+<td>n.</td>
+<td>汇编</td>
+<td>Assembly converts machine instructions into readable form.</td>
+<td>Used in low-level control.</td>
+</tr>
+<tr>
+<td>linking</td>
+<td>n.</td>
+<td>链接</td>
+<td>Linking combines object files into an executable.</td>
+<td>Step after compilation.</td>
+</tr>
+<tr>
+<td>executable</td>
+<td>n./adj.</td>
+<td>可执行文件；可执行的</td>
+<td>Executable files can be run by the operating system.</td>
+<td>e.g., <code>.exe</code>, <code>.out</code>.</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>n.</td>
+<td>运行时</td>
+<td>Errors that occur during runtime must be handled properly.</td>
+<td>Execution phase.</td>
+</tr>
+<tr>
+<td>syntax error</td>
+<td>n.</td>
+<td>语法错误</td>
+<td>Syntax errors prevent the program from compiling.</td>
+<td>Detected by compiler.</td>
+</tr>
+<tr>
+<td>semantic error</td>
+<td>n.</td>
+<td>语义错误</td>
+<td>Semantic errors occur when logic is incorrect.</td>
+<td>Detected at runtime or logically.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="75-control-structures">7.5 Control Structures</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sequence</td>
+<td>n.</td>
+<td>顺序结构</td>
+<td>Instructions are executed in a sequence by default.</td>
+<td>Basic program flow.</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>n.</td>
+<td>条件</td>
+<td>If the condition is true, the program executes a branch.</td>
+<td>Boolean expression.</td>
+</tr>
+<tr>
+<td>decision</td>
+<td>n.</td>
+<td>决策</td>
+<td>Decision structures use if–else statements.</td>
+<td>Conditional control.</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>n.</td>
+<td>循环</td>
+<td>A loop repeats a block of code multiple times.</td>
+<td>For or while loops.</td>
+</tr>
+<tr>
+<td>iteration</td>
+<td>n.</td>
+<td>迭代</td>
+<td>Each repetition of a loop is an iteration.</td>
+<td>Related to looping.</td>
+</tr>
+<tr>
+<td>branching</td>
+<td>n.</td>
+<td>分支</td>
+<td>Branching changes the flow of control.</td>
+<td>Includes if, switch, case.</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>adj.</td>
+<td>布尔的</td>
+<td>Boolean values are true or false.</td>
+<td>Logical data type.</td>
+</tr>
+<tr>
+<td>comparison operator</td>
+<td>n.</td>
+<td>比较运算符</td>
+<td>Comparison operators test conditions like <code>==</code> or <code>&gt;</code>.</td>
+<td>Used in control flow.</td>
+</tr>
+<tr>
+<td>logical operator</td>
+<td>n.</td>
+<td>逻辑运算符</td>
+<td>Logical operators include AND, OR, and NOT.</td>
+<td>Combine conditions.</td>
+</tr>
+<tr>
+<td>nested structure</td>
+<td>n.</td>
+<td>嵌套结构</td>
+<td>Nested loops can make programs more complex.</td>
+<td>Loop or condition inside another.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="76-data-handling-and-inputoutput">7.6 Data Handling and Input/Output</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td>n./v.</td>
+<td>输入</td>
+<td>The program waits for user input.</td>
+<td>Data entered by user.</td>
+</tr>
+<tr>
+<td>output</td>
+<td>n./v.</td>
+<td>输出</td>
+<td>The program prints output to the screen.</td>
+<td>Displayed results.</td>
+</tr>
+<tr>
+<td>read</td>
+<td>v.</td>
+<td>读取</td>
+<td>The program reads data from a file.</td>
+<td>Input operation.</td>
+</tr>
+<tr>
+<td>write</td>
+<td>v.</td>
+<td>写入</td>
+<td>Data can be written to disk files.</td>
+<td>Output operation.</td>
+</tr>
+<tr>
+<td>file</td>
+<td>n.</td>
+<td>文件</td>
+<td>Files are used to store permanent data.</td>
+<td>e.g., text, binary.</td>
+</tr>
+<tr>
+<td>open</td>
+<td>v.</td>
+<td>打开</td>
+<td>Open the file before reading or writing.</td>
+<td>File operation.</td>
+</tr>
+<tr>
+<td>close</td>
+<td>v.</td>
+<td>关闭</td>
+<td>Always close files after use.</td>
+<td>Prevents data loss.</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>n.</td>
+<td>数据流</td>
+<td>Streams handle input and output data.</td>
+<td>Used in I/O libraries.</td>
+</tr>
+<tr>
+<td>buffer</td>
+<td>n.</td>
+<td>缓冲区</td>
+<td>Buffers temporarily hold data during transfer.</td>
+<td>Improves efficiency.</td>
+</tr>
+<tr>
+<td>exception handling</td>
+<td>n.</td>
+<td>异常处理</td>
+<td>Exception handling prevents crashes when errors occur.</td>
+<td>e.g., try–catch.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="77-object-oriented-programming-oop">7.7 Object-Oriented Programming (OOP)</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>n.</td>
+<td>对象</td>
+<td>An object represents an instance of a class.</td>
+<td>Contains data and behavior.</td>
+</tr>
+<tr>
+<td>class</td>
+<td>n.</td>
+<td>类</td>
+<td>A class defines the structure of objects.</td>
+<td>Blueprint for objects.</td>
+</tr>
+<tr>
+<td>method</td>
+<td>n.</td>
+<td>方法</td>
+<td>Methods define the behavior of a class.</td>
+<td>Functions inside a class.</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>n.</td>
+<td>属性</td>
+<td>Attributes store data within an object.</td>
+<td>Also called “fields.”</td>
+</tr>
+<tr>
+<td>constructor</td>
+<td>n.</td>
+<td>构造函数</td>
+<td>The constructor initializes new objects.</td>
+<td>Called automatically.</td>
+</tr>
+<tr>
+<td>inheritance</td>
+<td>n.</td>
+<td>继承</td>
+<td>Inheritance allows new classes to reuse existing code.</td>
+<td>OOP principle.</td>
+</tr>
+<tr>
+<td>polymorphism</td>
+<td>n.</td>
+<td>多态</td>
+<td>Polymorphism allows methods to behave differently.</td>
+<td>Enables flexibility.</td>
+</tr>
+<tr>
+<td>encapsulation</td>
+<td>n.</td>
+<td>封装</td>
+<td>Encapsulation hides internal details from users.</td>
+<td>Improves modularity.</td>
+</tr>
+<tr>
+<td>abstraction</td>
+<td>n.</td>
+<td>抽象</td>
+<td>Abstraction simplifies complex systems by modeling essentials.</td>
+<td>Key OOP concept.</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>n.</td>
+<td>接口</td>
+<td>An interface defines methods without implementation.</td>
+<td>Used in design patterns.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="78-common-programming-languages">7.8 Common Programming Languages</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>n.</td>
+<td>C 语言</td>
+<td>C is widely used for system and embedded programming.</td>
+<td>Procedural, fast, low-level.</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>n.</td>
+<td>C++ 语言</td>
+<td>C++ supports object-oriented programming.</td>
+<td>Extension of C.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>n.</td>
+<td>Java 语言</td>
+<td>Java is used for enterprise and Android development.</td>
+<td>Platform-independent.</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>n.</td>
+<td>Python 语言</td>
+<td>Python is known for its simplicity and readability.</td>
+<td>General-purpose language.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>n.</td>
+<td>JavaScript 语言</td>
+<td>JavaScript runs in browsers for web interactivity.</td>
+<td>Client-side scripting.</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>n.</td>
+<td>PHP 语言</td>
+<td>PHP is widely used for dynamic web pages.</td>
+<td>Server-side scripting.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>n.</td>
+<td>Ruby 语言</td>
+<td>Ruby emphasizes simplicity and productivity.</td>
+<td>Used in Ruby on Rails.</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>n.</td>
+<td>Swift 语言</td>
+<td>Swift is Apple’s language for iOS development.</td>
+<td>Replaces Objective-C.</td>
+</tr>
+<tr>
+<td>Go (Golang)</td>
+<td>n.</td>
+<td>Go 语言</td>
+<td>Go is efficient for building concurrent systems.</td>
+<td>Developed by Google.</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>n.</td>
+<td>Rust 语言</td>
+<td>Rust offers memory safety without garbage collection.</td>
+<td>Systems programming language.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="79-software-development-practices">7.9 Software Development Practices</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDE (Integrated Development Environment)</td>
+<td>n.</td>
+<td>集成开发环境</td>
+<td>An IDE integrates editing, debugging, and compiling.</td>
+<td>e.g., VS Code, PyCharm.</td>
+</tr>
+<tr>
+<td>version control</td>
+<td>n.</td>
+<td>版本控制</td>
+<td>Git is a popular version control system.</td>
+<td>Tracks code changes.</td>
+</tr>
+<tr>
+<td>repository</td>
+<td>n.</td>
+<td>仓库</td>
+<td>Source code is stored in a Git repository.</td>
+<td>e.g., GitHub repository.</td>
+</tr>
+<tr>
+<td>commit</td>
+<td>v./n.</td>
+<td>提交</td>
+<td>Each commit saves a snapshot of the project.</td>
+<td>Basic VCS operation.</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>n./v.</td>
+<td>分支</td>
+<td>Developers create branches for new features.</td>
+<td>Enables parallel development.</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>v.</td>
+<td>合并</td>
+<td>Merge integrates changes from multiple branches.</td>
+<td>Resolves conflicts.</td>
+</tr>
+<tr>
+<td>build</td>
+<td>n./v.</td>
+<td>构建</td>
+<td>The build process compiles and links source code.</td>
+<td>Produces executables.</td>
+</tr>
+<tr>
+<td>test</td>
+<td>n./v.</td>
+<td>测试</td>
+<td>Unit tests ensure that code works correctly.</td>
+<td>Part of QA process.</td>
+</tr>
+<tr>
+<td>deploy</td>
+<td>v.</td>
+<td>部署</td>
+<td>The software is deployed to the production server.</td>
+<td>Delivery stage.</td>
+</tr>
+<tr>
+<td>documentation</td>
+<td>n.</td>
+<td>文档</td>
+<td>Good documentation explains how the software works.</td>
+<td>Important for maintenance.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2337 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/CE/ch03/">
+      
+      
+        <link rel="prev" href="../ch02/">
+      
+      
+        <link rel="next" href="../ch04/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 3: Computer Software - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-computer-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 3: Computer Software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-overview-of-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Overview of Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Operating Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-types-of-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Types of Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-programming-and-development-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Programming and Development Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-software-installation-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Software Installation and Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-software-errors-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Software Errors and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-examples-of-common-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Examples of Common Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/scss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-overview-of-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Overview of Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Operating Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-types-of-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Types of Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-programming-and-development-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Programming and Development Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-software-installation-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Software Installation and Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-software-errors-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Software Errors and Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-examples-of-common-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Examples of Common Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-3-computer-software">Chapter 3: Computer Software</h1>
+<hr />
+<h2 id="31-overview-of-software">3.1 Overview of Software</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>software</td>
+<td>n.</td>
+<td>软件</td>
+<td>Software tells the computer what to do.</td>
+<td>Opposite of hardware.</td>
+</tr>
+<tr>
+<td>program</td>
+<td>n.</td>
+<td>程序</td>
+<td>A program is a set of instructions that performs a task.</td>
+<td>Written by programmers.</td>
+</tr>
+<tr>
+<td>application</td>
+<td>n.</td>
+<td>应用程序</td>
+<td>Word processors and browsers are common applications.</td>
+<td>Also called <em>app</em>.</td>
+</tr>
+<tr>
+<td>system software</td>
+<td>n.</td>
+<td>系统软件</td>
+<td>The operating system is a type of system software.</td>
+<td>Controls hardware.</td>
+</tr>
+<tr>
+<td>application software</td>
+<td>n.</td>
+<td>应用软件</td>
+<td>Application software helps users perform specific tasks.</td>
+<td>e.g., Office, Photoshop.</td>
+</tr>
+<tr>
+<td>utility</td>
+<td>n.</td>
+<td>实用程序</td>
+<td>Antivirus software is a common utility.</td>
+<td>System maintenance tools.</td>
+</tr>
+<tr>
+<td>driver</td>
+<td>n.</td>
+<td>驱动程序</td>
+<td>You must install the printer driver before printing.</td>
+<td>Connects hardware and OS.</td>
+</tr>
+<tr>
+<td>update</td>
+<td>n./v.</td>
+<td>更新</td>
+<td>The software update fixes several bugs.</td>
+<td>Usually downloaded online.</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>n./v.</td>
+<td>升级</td>
+<td>The new version offers more features.</td>
+<td>May require reinstallation.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>n.</td>
+<td>版本</td>
+<td>You are using version 2.1 of the software.</td>
+<td>Labeled with numbers.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="32-operating-systems">3.2 Operating Systems</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operating system (OS)</td>
+<td>n.</td>
+<td>操作系统</td>
+<td>Windows, macOS, and Linux are popular operating systems.</td>
+<td>Core system software.</td>
+</tr>
+<tr>
+<td>kernel</td>
+<td>n.</td>
+<td>内核</td>
+<td>The kernel manages hardware and system resources.</td>
+<td>Heart of the OS.</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>n.</td>
+<td>界面</td>
+<td>The graphical user interface makes computers easy to use.</td>
+<td>GUI or CLI.</td>
+</tr>
+<tr>
+<td>GUI (Graphical User Interface)</td>
+<td>n.</td>
+<td>图形用户界面</td>
+<td>GUI allows users to click icons and menus.</td>
+<td>Used in modern OS.</td>
+</tr>
+<tr>
+<td>CLI (Command Line Interface)</td>
+<td>n.</td>
+<td>命令行界面</td>
+<td>Linux supports both GUI and CLI.</td>
+<td>Text-based interface.</td>
+</tr>
+<tr>
+<td>multitasking</td>
+<td>n.</td>
+<td>多任务处理</td>
+<td>Modern operating systems support multitasking.</td>
+<td>Running multiple programs at once.</td>
+</tr>
+<tr>
+<td>file system</td>
+<td>n.</td>
+<td>文件系统</td>
+<td>The file system organizes data on storage devices.</td>
+<td>e.g., FAT32, NTFS, ext4.</td>
+</tr>
+<tr>
+<td>process</td>
+<td>n.</td>
+<td>进程</td>
+<td>Each running program is a process.</td>
+<td>OS allocates resources to processes.</td>
+</tr>
+<tr>
+<td>thread</td>
+<td>n.</td>
+<td>线程</td>
+<td>Threads are lightweight units within a process.</td>
+<td>Used for parallel execution.</td>
+</tr>
+<tr>
+<td>boot</td>
+<td>v./n.</td>
+<td>启动</td>
+<td>The OS loads during the boot process.</td>
+<td>Also called “startup.”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="33-types-of-software">3.3 Types of Software</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open-source software</td>
+<td>n.</td>
+<td>开源软件</td>
+<td>Linux is an open-source operating system.</td>
+<td>Free to modify and distribute.</td>
+</tr>
+<tr>
+<td>proprietary software</td>
+<td>n.</td>
+<td>专有软件</td>
+<td>Microsoft Office is proprietary software.</td>
+<td>Owned by a company.</td>
+</tr>
+<tr>
+<td>freeware</td>
+<td>n.</td>
+<td>免费软件</td>
+<td>VLC Media Player is freeware.</td>
+<td>Free but not open-source.</td>
+</tr>
+<tr>
+<td>shareware</td>
+<td>n.</td>
+<td>共享软件</td>
+<td>Shareware can be used for free during a trial period.</td>
+<td>Requires payment later.</td>
+</tr>
+<tr>
+<td>commercial software</td>
+<td>n.</td>
+<td>商业软件</td>
+<td>Photoshop is commercial software.</td>
+<td>Sold under license.</td>
+</tr>
+<tr>
+<td>demo version</td>
+<td>n.</td>
+<td>演示版</td>
+<td>The demo version has limited functions.</td>
+<td>Used for trial or preview.</td>
+</tr>
+<tr>
+<td>patch</td>
+<td>n.</td>
+<td>补丁</td>
+<td>The latest patch fixes a security flaw.</td>
+<td>Software correction.</td>
+</tr>
+<tr>
+<td>license</td>
+<td>n.</td>
+<td>许可证</td>
+<td>You need a license to use commercial software.</td>
+<td>Legal permission.</td>
+</tr>
+<tr>
+<td>activation</td>
+<td>n.</td>
+<td>激活</td>
+<td>Internet activation is required to use the product.</td>
+<td>Confirms license validity.</td>
+</tr>
+<tr>
+<td>piracy</td>
+<td>n.</td>
+<td>软件盗版</td>
+<td>Software piracy is illegal and unethical.</td>
+<td>Unauthorized copying.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="34-programming-and-development-software">3.4 Programming and Development Software</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>programming language</td>
+<td>n.</td>
+<td>程序设计语言</td>
+<td>Python is an easy-to-learn programming language.</td>
+<td>Used to write programs.</td>
+</tr>
+<tr>
+<td>compiler</td>
+<td>n.</td>
+<td>编译器</td>
+<td>The compiler translates source code into machine code.</td>
+<td>e.g., GCC, Clang.</td>
+</tr>
+<tr>
+<td>interpreter</td>
+<td>n.</td>
+<td>解释器</td>
+<td>The interpreter executes code line by line.</td>
+<td>e.g., Python interpreter.</td>
+</tr>
+<tr>
+<td>assembler</td>
+<td>n.</td>
+<td>汇编器</td>
+<td>The assembler converts assembly code to machine code.</td>
+<td>Used in low-level programming.</td>
+</tr>
+<tr>
+<td>debugger</td>
+<td>n.</td>
+<td>调试器</td>
+<td>The debugger helps programmers find and fix errors.</td>
+<td>Debugging tool.</td>
+</tr>
+<tr>
+<td>integrated development environment (IDE)</td>
+<td>n.</td>
+<td>集成开发环境</td>
+<td>PyCharm is a popular IDE for Python.</td>
+<td>Combines editor, compiler, debugger.</td>
+</tr>
+<tr>
+<td>code editor</td>
+<td>n.</td>
+<td>代码编辑器</td>
+<td>VS Code is a lightweight code editor.</td>
+<td>Text-based programming tool.</td>
+</tr>
+<tr>
+<td>source code</td>
+<td>n.</td>
+<td>源代码</td>
+<td>Programmers write source code in high-level languages.</td>
+<td>Human-readable.</td>
+</tr>
+<tr>
+<td>machine code</td>
+<td>n.</td>
+<td>机器代码</td>
+<td>The CPU executes machine code directly.</td>
+<td>Binary form of instructions.</td>
+</tr>
+<tr>
+<td>script</td>
+<td>n.</td>
+<td>脚本</td>
+<td>A shell script automates system tasks.</td>
+<td>Common in Linux environments.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="35-software-installation-and-management">3.5 Software Installation and Management</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>install</td>
+<td>v.</td>
+<td>安装</td>
+<td>You must install the software before use.</td>
+<td>Opposite: <em>uninstall</em>.</td>
+</tr>
+<tr>
+<td>uninstall</td>
+<td>v.</td>
+<td>卸载</td>
+<td>Please uninstall unused programs.</td>
+<td>Removes from system.</td>
+</tr>
+<tr>
+<td>setup</td>
+<td>n./v.</td>
+<td>安装程序；设置</td>
+<td>Follow the setup wizard to complete installation.</td>
+<td>Common installer name.</td>
+</tr>
+<tr>
+<td>configuration</td>
+<td>n.</td>
+<td>配置</td>
+<td>The configuration file contains user preferences.</td>
+<td>Often <em>.cfg</em> files.</td>
+</tr>
+<tr>
+<td>compatibility</td>
+<td>n.</td>
+<td>兼容性</td>
+<td>The new software is compatible with Windows 11.</td>
+<td>Opposite: <em>incompatibility</em>.</td>
+</tr>
+<tr>
+<td>update</td>
+<td>v./n.</td>
+<td>更新</td>
+<td>Automatic updates improve security.</td>
+<td>May download patches.</td>
+</tr>
+<tr>
+<td>rollback</td>
+<td>v.</td>
+<td>回滚</td>
+<td>You can roll back to the previous version if needed.</td>
+<td>Undo an update.</td>
+</tr>
+<tr>
+<td>reinstall</td>
+<td>v.</td>
+<td>重新安装</td>
+<td>Reinstall the OS to fix system problems.</td>
+<td>Clean setup.</td>
+</tr>
+<tr>
+<td>package manager</td>
+<td>n.</td>
+<td>软件包管理器</td>
+<td>Linux uses package managers like apt and yum.</td>
+<td>Tool for installation and updates.</td>
+</tr>
+<tr>
+<td>shortcut</td>
+<td>n.</td>
+<td>快捷方式</td>
+<td>A desktop shortcut provides quick access to the program.</td>
+<td>Icon link.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="36-software-errors-and-maintenance">3.6 Software Errors and Maintenance</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bug</td>
+<td>n.</td>
+<td>程序错误</td>
+<td>The software crashed because of a bug.</td>
+<td>Common computer term.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>v.</td>
+<td>调试</td>
+<td>Developers debug code to fix issues.</td>
+<td>Verb form of <em>bug</em>.</td>
+</tr>
+<tr>
+<td>crash</td>
+<td>v./n.</td>
+<td>崩溃</td>
+<td>The system crashed unexpectedly.</td>
+<td>Program failure.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>n.</td>
+<td>错误</td>
+<td>Syntax errors prevent the program from running.</td>
+<td>Common in code.</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>n.</td>
+<td>异常</td>
+<td>The program throws an exception when an error occurs.</td>
+<td>Runtime error.</td>
+</tr>
+<tr>
+<td>log</td>
+<td>n./v.</td>
+<td>日志；记录</td>
+<td>Check the log file for system errors.</td>
+<td>Used in debugging.</td>
+</tr>
+<tr>
+<td>maintenance</td>
+<td>n.</td>
+<td>维护</td>
+<td>Regular maintenance ensures stability.</td>
+<td>Prevents long-term failures.</td>
+</tr>
+<tr>
+<td>optimize</td>
+<td>v.</td>
+<td>优化</td>
+<td>The program was optimized for better performance.</td>
+<td>Improves speed or efficiency.</td>
+</tr>
+<tr>
+<td>performance</td>
+<td>n.</td>
+<td>性能</td>
+<td>Software performance depends on hardware and code.</td>
+<td>Related to speed.</td>
+</tr>
+<tr>
+<td>stability</td>
+<td>n.</td>
+<td>稳定性</td>
+<td>The new update improves system stability.</td>
+<td>Reduces crashes.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="37-examples-of-common-software">3.7 Examples of Common Software</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>word processor</td>
+<td>n.</td>
+<td>文本处理软件</td>
+<td>Microsoft Word is a popular word processor.</td>
+<td>For creating documents.</td>
+</tr>
+<tr>
+<td>spreadsheet</td>
+<td>n.</td>
+<td>电子表格</td>
+<td>Excel is a powerful spreadsheet application.</td>
+<td>Used for calculations.</td>
+</tr>
+<tr>
+<td>presentation software</td>
+<td>n.</td>
+<td>演示软件</td>
+<td>PowerPoint is used for creating slides.</td>
+<td>Visual presentations.</td>
+</tr>
+<tr>
+<td>database management system (DBMS)</td>
+<td>n.</td>
+<td>数据库管理系统</td>
+<td>MySQL is a popular DBMS.</td>
+<td>For storing and managing data.</td>
+</tr>
+<tr>
+<td>browser</td>
+<td>n.</td>
+<td>浏览器</td>
+<td>Google Chrome is the most widely used browser.</td>
+<td>Accesses web pages.</td>
+</tr>
+<tr>
+<td>email client</td>
+<td>n.</td>
+<td>邮件客户端</td>
+<td>Outlook is an email client for managing messages.</td>
+<td>Sends and receives email.</td>
+</tr>
+<tr>
+<td>media player</td>
+<td>n.</td>
+<td>媒体播放器</td>
+<td>VLC is a free media player that supports many formats.</td>
+<td>Plays audio and video.</td>
+</tr>
+<tr>
+<td>antivirus</td>
+<td>n.</td>
+<td>防病毒软件</td>
+<td>Install antivirus software to protect your system.</td>
+<td>Security application.</td>
+</tr>
+<tr>
+<td>compression tool</td>
+<td>n.</td>
+<td>压缩工具</td>
+<td>WinRAR is a popular compression tool.</td>
+<td>Creates ZIP or RAR files.</td>
+</tr>
+<tr>
+<td>cloud service</td>
+<td>n.</td>
+<td>云服务</td>
+<td>Google Drive is a cloud storage service.</td>
+<td>Online storage platform.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://abotw.github.io/docs-ics/CE/ch09/">
+      
+      
+        <link rel="prev" href="../ch08/">
+      
+      
+        <link rel="next" href="../ch10/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 9: The Internet and Web Technologies - Docs-ICS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-9-the-internet-and-web-technologies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs-ICS" class="md-header__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs-ICS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 9: The Internet and Web Technologies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs-ICS" class="md-nav__button md-logo" aria-label="Docs-ICS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs-ICS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-ics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS101: ICS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Computer Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Computer Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Computer Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Computer Networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Data and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Programming and Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Computer Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: The Internet and Web Technologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-introduction-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Introduction to the Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-internet-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Internet Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Web Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-web-development-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Web Development Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-web-design-and-user-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Web Design and User Experience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-internet-services-and-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Internet Services and Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-cloud-and-web-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 Cloud and Web Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-web-security-and-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.8 Web Security and Privacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#99-emerging-web-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9 Emerging Web Technologies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Emerging Technologies and Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Computer Ethics and Society
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer English Vocabulary Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocab-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    High-Frequency Exam Vocabulary List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DocSol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DocSol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/doc-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/Converter/pandoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/md-sol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown Solutions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/mkdocs-material/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DocSol/MD/revealjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reveal.js
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/cmt-msg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commit Message
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SE/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Github
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/CSS/scss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to SCSS (Sassy CSS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SiteGen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SiteGen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/site-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Site-Generation Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jekyll
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jekyll
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web/SiteGen/Jekyll/jekyll/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Jekyll
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-introduction-to-the-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Introduction to the Internet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-internet-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Internet Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-web-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Web Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-web-development-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Web Development Languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-web-design-and-user-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Web Design and User Experience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-internet-services-and-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Internet Services and Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-cloud-and-web-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 Cloud and Web Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-web-security-and-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.8 Web Security and Privacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#99-emerging-web-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9 Emerging Web Technologies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-9-the-internet-and-web-technologies">Chapter 9: The Internet and Web Technologies</h1>
+<hr />
+<h2 id="91-introduction-to-the-internet">9.1 Introduction to the Internet</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet</td>
+<td>n.</td>
+<td>互联网</td>
+<td>The Internet connects millions of computers around the world.</td>
+<td>Global communication network.</td>
+</tr>
+<tr>
+<td>World Wide Web (WWW)</td>
+<td>n.</td>
+<td>万维网</td>
+<td>The World Wide Web is a system of interlinked web pages.</td>
+<td>Subset of the Internet.</td>
+</tr>
+<tr>
+<td>web</td>
+<td>n.</td>
+<td>网络</td>
+<td>The web allows users to access online information easily.</td>
+<td>Often refers to websites collectively.</td>
+</tr>
+<tr>
+<td>online</td>
+<td>adj./adv.</td>
+<td>在线的</td>
+<td>Online services are available 24 hours a day.</td>
+<td>Opposite of offline.</td>
+</tr>
+<tr>
+<td>website</td>
+<td>n.</td>
+<td>网站</td>
+<td>The company launched a new website for its products.</td>
+<td>Collection of related web pages.</td>
+</tr>
+<tr>
+<td>webpage</td>
+<td>n.</td>
+<td>网页</td>
+<td>Each webpage is written in HTML and displayed in a browser.</td>
+<td>Basic web unit.</td>
+</tr>
+<tr>
+<td>hyperlink</td>
+<td>n.</td>
+<td>超链接</td>
+<td>Click the hyperlink to open another page.</td>
+<td>Connects documents together.</td>
+</tr>
+<tr>
+<td>domain name</td>
+<td>n.</td>
+<td>域名</td>
+<td>“example.com” is an Internet domain name.</td>
+<td>Translated by DNS.</td>
+</tr>
+<tr>
+<td>URL (Uniform Resource Locator)</td>
+<td>n.</td>
+<td>统一资源定位符</td>
+<td>A URL specifies the address of a resource on the web.</td>
+<td>e.g., <a href="https://www.example.com/">https://www.example.com</a></td>
+</tr>
+<tr>
+<td>browser</td>
+<td>n.</td>
+<td>浏览器</td>
+<td>Chrome and Firefox are popular web browsers.</td>
+<td>Client software for the web.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="92-internet-infrastructure">9.2 Internet Infrastructure</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server</td>
+<td>n.</td>
+<td>服务器</td>
+<td>Web servers store and deliver web content.</td>
+<td>Responds to client requests.</td>
+</tr>
+<tr>
+<td>client</td>
+<td>n.</td>
+<td>客户端</td>
+<td>A client requests information from a server.</td>
+<td>e.g., web browser.</td>
+</tr>
+<tr>
+<td>host</td>
+<td>n.</td>
+<td>主机</td>
+<td>Every device on a network is called a host.</td>
+<td>Identified by IP address.</td>
+</tr>
+<tr>
+<td>IP address</td>
+<td>n.</td>
+<td>IP 地址</td>
+<td>Every Internet host has a unique IP address.</td>
+<td>IPv4 or IPv6.</td>
+</tr>
+<tr>
+<td>DNS (Domain Name System)</td>
+<td>n.</td>
+<td>域名系统</td>
+<td>DNS translates domain names into IP addresses.</td>
+<td>Internet “phone book.”</td>
+</tr>
+<tr>
+<td>TCP/IP</td>
+<td>n.</td>
+<td>传输控制协议/网际协议</td>
+<td>TCP/IP is the fundamental protocol suite of the Internet.</td>
+<td>Basis of Internet communication.</td>
+</tr>
+<tr>
+<td>packet</td>
+<td>n.</td>
+<td>数据包</td>
+<td>Data are sent across the Internet in packets.</td>
+<td>Unit of data transmission.</td>
+</tr>
+<tr>
+<td>router</td>
+<td>n.</td>
+<td>路由器</td>
+<td>Routers direct data packets to their destinations.</td>
+<td>Network device.</td>
+</tr>
+<tr>
+<td>ISP (Internet Service Provider)</td>
+<td>n.</td>
+<td>互联网服务提供商</td>
+<td>You need an ISP to connect to the Internet.</td>
+<td>e.g., China Telecom, AT&amp;T.</td>
+</tr>
+<tr>
+<td>bandwidth</td>
+<td>n.</td>
+<td>带宽</td>
+<td>Bandwidth determines how much data can be transmitted.</td>
+<td>Measured in bits per second.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="93-web-architecture">9.3 Web Architecture</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>web server</td>
+<td>n.</td>
+<td>网络服务器</td>
+<td>Apache is a popular open-source web server.</td>
+<td>Hosts websites.</td>
+</tr>
+<tr>
+<td>web client</td>
+<td>n.</td>
+<td>网络客户端</td>
+<td>A browser acts as a web client.</td>
+<td>Requests resources.</td>
+</tr>
+<tr>
+<td>HTTP (Hypertext Transfer Protocol)</td>
+<td>n.</td>
+<td>超文本传输协议</td>
+<td>HTTP is used for transferring web data.</td>
+<td>Application layer protocol.</td>
+</tr>
+<tr>
+<td>HTTPS (Hypertext Transfer Protocol Secure)</td>
+<td>n.</td>
+<td>安全超文本传输协议</td>
+<td>HTTPS encrypts data between client and server.</td>
+<td>Secure version of HTTP.</td>
+</tr>
+<tr>
+<td>request</td>
+<td>n.</td>
+<td>请求</td>
+<td>The browser sends a request to the web server.</td>
+<td>Client action.</td>
+</tr>
+<tr>
+<td>response</td>
+<td>n.</td>
+<td>响应</td>
+<td>The server sends a response to the browser.</td>
+<td>Server’s reply.</td>
+</tr>
+<tr>
+<td>session</td>
+<td>n.</td>
+<td>会话</td>
+<td>A web session stores user activity temporarily.</td>
+<td>Maintains continuity.</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>n.</td>
+<td>Cookie 文件</td>
+<td>Cookies save user preferences on the client side.</td>
+<td>Small text files used by browsers.</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>n.</td>
+<td>缓存</td>
+<td>Browser cache stores web data locally for faster access.</td>
+<td>Improves performance.</td>
+</tr>
+<tr>
+<td>API (Application Programming Interface)</td>
+<td>n.</td>
+<td>应用程序接口</td>
+<td>APIs allow web applications to exchange data.</td>
+<td>e.g., REST API.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="94-web-development-languages">9.4 Web Development Languages</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML (HyperText Markup Language)</td>
+<td>n.</td>
+<td>超文本标记语言</td>
+<td>HTML defines the structure of web pages.</td>
+<td>Markup language.</td>
+</tr>
+<tr>
+<td>CSS (Cascading Style Sheets)</td>
+<td>n.</td>
+<td>层叠样式表</td>
+<td>CSS controls the appearance of web pages.</td>
+<td>For styling and layout.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>n.</td>
+<td>JavaScript 语言</td>
+<td>JavaScript adds interactivity to web pages.</td>
+<td>Client-side scripting.</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>n.</td>
+<td>PHP 语言</td>
+<td>PHP is used for creating dynamic web pages.</td>
+<td>Server-side scripting.</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>n.</td>
+<td>结构化查询语言</td>
+<td>SQL is used for database communication.</td>
+<td>Used in back-end systems.</td>
+</tr>
+<tr>
+<td>JSON (JavaScript Object Notation)</td>
+<td>n.</td>
+<td>JavaScript 对象表示法</td>
+<td>JSON is a lightweight data format for APIs.</td>
+<td>Used for data exchange.</td>
+</tr>
+<tr>
+<td>XML (Extensible Markup Language)</td>
+<td>n.</td>
+<td>可扩展标记语言</td>
+<td>XML structures data in a human- and machine-readable form.</td>
+<td>Often used for configuration.</td>
+</tr>
+<tr>
+<td>framework</td>
+<td>n.</td>
+<td>框架</td>
+<td>React and Django are popular web frameworks.</td>
+<td>Provide reusable components.</td>
+</tr>
+<tr>
+<td>front-end</td>
+<td>n.</td>
+<td>前端</td>
+<td>The front-end handles the user interface.</td>
+<td>Runs in the browser.</td>
+</tr>
+<tr>
+<td>back-end</td>
+<td>n.</td>
+<td>后端</td>
+<td>The back-end manages server-side logic and databases.</td>
+<td>Runs on the server.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="95-web-design-and-user-experience">9.5 Web Design and User Experience</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layout</td>
+<td>n.</td>
+<td>布局</td>
+<td>The layout determines how elements are arranged on a page.</td>
+<td>Visual structure.</td>
+</tr>
+<tr>
+<td>navigation</td>
+<td>n.</td>
+<td>导航</td>
+<td>Good navigation improves website usability.</td>
+<td>Menus and links.</td>
+</tr>
+<tr>
+<td>hyperlink</td>
+<td>n.</td>
+<td>超链接</td>
+<td>Hyperlinks allow users to jump between pages.</td>
+<td>Connects resources.</td>
+</tr>
+<tr>
+<td>menu</td>
+<td>n.</td>
+<td>菜单</td>
+<td>The top menu provides access to main sections.</td>
+<td>GUI element.</td>
+</tr>
+<tr>
+<td>responsive design</td>
+<td>n.</td>
+<td>响应式设计</td>
+<td>Responsive design adapts to different screen sizes.</td>
+<td>Important for mobile web.</td>
+</tr>
+<tr>
+<td>accessibility</td>
+<td>n.</td>
+<td>可访问性</td>
+<td>Accessibility ensures that websites are usable by everyone.</td>
+<td>Includes screen reader support.</td>
+</tr>
+<tr>
+<td>usability</td>
+<td>n.</td>
+<td>可用性</td>
+<td>Usability testing measures user satisfaction.</td>
+<td>Human-centered design.</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>n.</td>
+<td>界面</td>
+<td>The interface should be clear and intuitive.</td>
+<td>User-facing part of the system.</td>
+</tr>
+<tr>
+<td>theme</td>
+<td>n.</td>
+<td>主题</td>
+<td>The website theme defines colors and typography.</td>
+<td>Visual identity.</td>
+</tr>
+<tr>
+<td>template</td>
+<td>n.</td>
+<td>模板</td>
+<td>Templates save time in web design.</td>
+<td>Predefined layout structure.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="96-internet-services-and-applications">9.6 Internet Services and Applications</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>n.</td>
+<td>电子邮件</td>
+<td>Email remains a common form of online communication.</td>
+<td>Internet-based messaging.</td>
+</tr>
+<tr>
+<td>instant messaging</td>
+<td>n.</td>
+<td>即时通讯</td>
+<td>Instant messaging allows real-time text exchange.</td>
+<td>e.g., WhatsApp, Telegram.</td>
+</tr>
+<tr>
+<td>cloud computing</td>
+<td>n.</td>
+<td>云计算</td>
+<td>Cloud computing provides scalable online resources.</td>
+<td>Includes IaaS, PaaS, SaaS.</td>
+</tr>
+<tr>
+<td>streaming</td>
+<td>n.</td>
+<td>流媒体</td>
+<td>Streaming allows watching videos without full download.</td>
+<td>e.g., YouTube, Netflix.</td>
+</tr>
+<tr>
+<td>online storage</td>
+<td>n.</td>
+<td>在线存储</td>
+<td>Services like Google Drive offer online file storage.</td>
+<td>Also called <em>cloud storage</em>.</td>
+</tr>
+<tr>
+<td>search engine</td>
+<td>n.</td>
+<td>搜索引擎</td>
+<td>Google is the world’s leading search engine.</td>
+<td>Finds web content.</td>
+</tr>
+<tr>
+<td>social media</td>
+<td>n.</td>
+<td>社交媒体</td>
+<td>Social media platforms connect people worldwide.</td>
+<td>e.g., Twitter, Instagram.</td>
+</tr>
+<tr>
+<td>e-commerce</td>
+<td>n.</td>
+<td>电子商务</td>
+<td>E-commerce enables online shopping and transactions.</td>
+<td>e.g., Amazon, Taobao.</td>
+</tr>
+<tr>
+<td>forum</td>
+<td>n.</td>
+<td>论坛</td>
+<td>Users share opinions in online forums.</td>
+<td>Discussion platform.</td>
+</tr>
+<tr>
+<td>blog</td>
+<td>n.</td>
+<td>博客</td>
+<td>Many professionals write blogs to share knowledge.</td>
+<td>Online journal or publication.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="97-cloud-and-web-services">9.7 Cloud and Web Services</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cloud</td>
+<td>n.</td>
+<td>云</td>
+<td>Data stored in the cloud can be accessed anywhere.</td>
+<td>Internet-based storage.</td>
+</tr>
+<tr>
+<td>SaaS (Software as a Service)</td>
+<td>n.</td>
+<td>软件即服务</td>
+<td>SaaS delivers software via the Internet.</td>
+<td>e.g., Google Docs.</td>
+</tr>
+<tr>
+<td>PaaS (Platform as a Service)</td>
+<td>n.</td>
+<td>平台即服务</td>
+<td>Developers use PaaS for application deployment.</td>
+<td>Provides tools and environments.</td>
+</tr>
+<tr>
+<td>IaaS (Infrastructure as a Service)</td>
+<td>n.</td>
+<td>基础设施即服务</td>
+<td>IaaS provides virtualized hardware resources.</td>
+<td>e.g., AWS EC2.</td>
+</tr>
+<tr>
+<td>virtualization</td>
+<td>n.</td>
+<td>虚拟化</td>
+<td>Virtualization enables multiple systems on one machine.</td>
+<td>Core of cloud computing.</td>
+</tr>
+<tr>
+<td>container</td>
+<td>n.</td>
+<td>容器</td>
+<td>Containers package applications with all dependencies.</td>
+<td>e.g., Docker.</td>
+</tr>
+<tr>
+<td>scalability</td>
+<td>n.</td>
+<td>可扩展性</td>
+<td>Cloud systems provide high scalability.</td>
+<td>Easily handle growth.</td>
+</tr>
+<tr>
+<td>API gateway</td>
+<td>n.</td>
+<td>API 网关</td>
+<td>The API gateway manages access to multiple web services.</td>
+<td>Controls communication between clients and APIs.</td>
+</tr>
+<tr>
+<td>CDN (Content Delivery Network)</td>
+<td>n.</td>
+<td>内容分发网络</td>
+<td>CDNs deliver web content faster by caching it worldwide.</td>
+<td>Improves website performance.</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>n.</td>
+<td>正常运行时间</td>
+<td>Cloud providers guarantee 99.9% uptime.</td>
+<td>Reliability metric.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="98-web-security-and-privacy">9.8 Web Security and Privacy</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTPS</td>
+<td>n.</td>
+<td>安全超文本传输协议</td>
+<td>HTTPS ensures secure data exchange between browsers and servers.</td>
+<td>Encrypts web traffic.</td>
+</tr>
+<tr>
+<td>SSL/TLS</td>
+<td>n.</td>
+<td>安全套接层/传输层安全协议</td>
+<td>SSL/TLS protocols provide web encryption.</td>
+<td>Used by HTTPS.</td>
+</tr>
+<tr>
+<td>certificate</td>
+<td>n.</td>
+<td>证书</td>
+<td>Websites use digital certificates to verify identity.</td>
+<td>Issued by certificate authorities (CA).</td>
+</tr>
+<tr>
+<td>authentication</td>
+<td>n.</td>
+<td>身份验证</td>
+<td>Two-factor authentication improves login security.</td>
+<td>Prevents unauthorized access.</td>
+</tr>
+<tr>
+<td>authorization</td>
+<td>n.</td>
+<td>授权</td>
+<td>Authorization defines what users can do on a site.</td>
+<td>Role-based access control.</td>
+</tr>
+<tr>
+<td>cookie</td>
+<td>n.</td>
+<td>Cookie 文件</td>
+<td>Cookies may store personal data for login sessions.</td>
+<td>Privacy concern.</td>
+</tr>
+<tr>
+<td>privacy policy</td>
+<td>n.</td>
+<td>隐私政策</td>
+<td>The privacy policy explains how data are collected and used.</td>
+<td>Required by law in many regions.</td>
+</tr>
+<tr>
+<td>malware</td>
+<td>n.</td>
+<td>恶意软件</td>
+<td>Malware can be distributed through insecure websites.</td>
+<td>Includes trojans and spyware.</td>
+</tr>
+<tr>
+<td>phishing</td>
+<td>n.</td>
+<td>网络钓鱼</td>
+<td>Phishing websites imitate legitimate ones to steal passwords.</td>
+<td>Major web security risk.</td>
+</tr>
+<tr>
+<td>firewall</td>
+<td>n.</td>
+<td>防火墙</td>
+<td>Web servers use firewalls to filter malicious requests.</td>
+<td>Part of web defense.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="99-emerging-web-technologies">9.9 Emerging Web Technologies</h2>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Part of Speech</th>
+<th>Chinese Meaning</th>
+<th>Example Sentence</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web 2.0</td>
+<td>n.</td>
+<td>Web 2.0 技术</td>
+<td>Web 2.0 emphasizes user-generated content and interactivity.</td>
+<td>Social web era.</td>
+</tr>
+<tr>
+<td>Web 3.0</td>
+<td>n.</td>
+<td>Web 3.0 技术</td>
+<td>Web 3.0 integrates blockchain and decentralized data.</td>
+<td>Semantic and decentralized web.</td>
+</tr>
+<tr>
+<td>semantic web</td>
+<td>n.</td>
+<td>语义网</td>
+<td>The semantic web helps computers understand web data.</td>
+<td>Machine-readable Internet.</td>
+</tr>
+<tr>
+<td>progressive web app (PWA)</td>
+<td>n.</td>
+<td>渐进式网络应用</td>
+<td>PWAs work offline and behave like native apps.</td>
+<td>Modern web application model.</td>
+</tr>
+<tr>
+<td>artificial intelligence (AI)</td>
+<td>n.</td>
+<td>人工智能</td>
+<td>AI enhances personalization in web services.</td>
+<td>Used in recommendation systems.</td>
+</tr>
+<tr>
+<td>machine learning</td>
+<td>n.</td>
+<td>机器学习</td>
+<td>Machine learning improves search and ad targeting.</td>
+<td>Subfield of AI.</td>
+</tr>
+<tr>
+<td>blockchain</td>
+<td>n.</td>
+<td>区块链</td>
+<td>Blockchain enables secure, decentralized web transactions.</td>
+<td>Foundation of Web3.</td>
+</tr>
+<tr>
+<td>virtual reality (VR)</td>
+<td>n.</td>
+<td>虚拟现实</td>
+<td>VR websites provide immersive experiences.</td>
+<td>3D interaction.</td>
+</tr>
+<tr>
+<td>augmented reality (AR)</td>
+<td>n.</td>
+<td>增强现实</td>
+<td>AR overlays digital data on the real world.</td>
+<td>Used in mobile web applications.</td>
+</tr>
+<tr>
+<td>IoT (Internet of Things)</td>
+<td>n.</td>
+<td>物联网</td>
+<td>IoT integrates web access into everyday devices.</td>
+<td>Smart homes, wearable tech.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
